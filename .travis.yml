@@ -1,0 +1,32 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - pip install --user codecov
+
+install:
+  - travis_retry composer self-update && composer --version
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - travis_retry composer install --prefer-dist --no-interaction
+
+before_script:
+  - mysql -e 'create database tags_behavior_yii2_tests;'
+  - php ./tests/yii migrate --migrationPath=./tests/migrations --interactive=0
+
+script:
+  - vendor/bin/phpunit --coverage-clover=coverage.clover
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+after_success:
+  - codecov

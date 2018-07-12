@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  php:
+    build: 
+      context: ./
+      dockerfile: ./docker/php/Dockerfile
+    expose:
+      - 9000
+    links:
+      - mysql:mysql
+    volumes:
+      - ./:/var/www/html
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    env_file: .env
