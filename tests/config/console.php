@@ -8,7 +8,7 @@ $config = [
     'components' => [
         'db' => [
             'class'             => 'yii\db\Connection',
-            'dsn'               => 'mysql:host=127.0.0.1;dbname=settings_yii2_tests',
+            'dsn'               => 'mysql:host=127.0.0.1;dbname=tags_behavior_yii2_tests',
             'username'          => 'root',
             'password'          => '',
             'emulatePrepare'    => true,
