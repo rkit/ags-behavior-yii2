@@ -18,7 +18,7 @@ composer require rkit/tags-behavior-yii2
 For example, we have a model `Post` and we want to add the ability to specify tags.  
 Let's do it.
 
-1. Add table and model for the tags
+1. Add a table and a model for the tags
 
 ```php
 $this->createTable('{{%tag}}', [
@@ -35,7 +35,7 @@ $this->createTable('{{%post_to_tag}}', [
 $this->addPrimaryKey('', '{{%post_to_tag}}', ['post_id', 'tag_id']);
 ```
 
-2. Add `TagsBehavior` to model.
+2. Add the behavior `TagsBehavior` to the `Post` model
 
 ```php
 public function behaviors()
@@ -59,7 +59,7 @@ public function behaviors()
 }
 ```
 
-3. Add relation `tags` (see `relation` option in the behavior)
+3. Add the relation `tags` (see `relation` option in the behavior)
 
 ```php
 /**
