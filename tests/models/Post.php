@@ -2,8 +2,6 @@
 
 namespace tests\models;
 
-use rkit\tags\behavior\TagsBehavior;
-
 class Post extends \yii\db\ActiveRecord
 {
     /**
@@ -21,7 +19,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'tagsBehavior' => [
-                'class' => TagsBehavior::class,
+                'class' => 'rkit\tags\behavior\TagsBehavior',
                 'relation' => 'tags',
                 'tagAttribute' => 'name',
                 'tagFrequencyAttribute' => 'frequency',
