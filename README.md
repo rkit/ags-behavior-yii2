@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/rkit/tags-behavior-yii2.svg?branch=master)](https://travis-ci.org/rkit/tags-behavior-yii2)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rkit/tags-behavior-yii2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rkit/tags-behavior-yii2/?branch=master)
 
+Flexible yii2 behavior for tags.
+
 ## Requirements
 
 PHP 7
